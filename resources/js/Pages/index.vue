@@ -1,16 +1,9 @@
 <template>
-    <div>
-        <template>
-
-        </template>
-    </div>
+    <HomeLayout>
+        <h1>RESTO MANAGE LC</h1>
+    </HomeLayout>
 </template>
 
 <script setup>
-import { usePage } from "@inertiajs/vue3";
-import { useForm } from "@inertiajs/vue3";
-import { ref } from "vue";
-import template from "@Components/Template.vue";
-
-console.log("estoy en index");
+import HomeLayout from "@/Layouts/homeLayout.vue";
 </script>

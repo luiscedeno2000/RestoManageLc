@@ -1,11 +1,11 @@
 <template>
     <div>
-        <MainContent>
-        </MainContent>
         <Nav>
         </Nav>
 
-        <slot/>
+        <MainContent>
+            <slot/>
+        </MainContent>
 
         <Footer>
         </Footer>

@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "target": "ES2020",
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "allowJs": true,
+        "checkJs": false,
+        "jsx": "preserve",
+        "strict": false,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["resources/js/*"],
+            "~/*": ["resources/js/*"],
+            "@/Components/*": ["resources/js/Components/*"],
+            "@/Layouts/*": ["resources/js/Layouts/*"],
+            "@/Pages/*": ["resources/js/Pages/*"]
+        }
+    },
+    "include": [
+        "resources/js/**/*",
+        "resources/js/**/*.vue",
+        "resources/js/**/*.js"
+    ],
+    "exclude": [
+        "node_modules",
+        "vendor",
+        "storage",
+        "bootstrap/cache"
+    ]
+} 

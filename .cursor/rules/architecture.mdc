@@ -1,0 +1,88 @@
+# RestoManageLc - Arquitectura Hexagonal
+
+## Arquitectura del Proyecto
+- **Tipo**: Arquitectura Hexagonal (Clean Architecture)
+- **Frontend**: `resources/js/Pages/` (Vue.js + Inertia.js)
+- **Backend**: `src/` (PHP/Laravel)
+
+## Estructura de Módulos
+Cada módulo debe seguir esta estructura en `src/`:
+
+```
+src/
+├── [ModuleName]/
+│   ├── Application/
+│   │   ├── DTOs/           # Data Transfer Objects
+│   │   ├── Services/       # Servicios de aplicación
+│   │   └── UseCases/       # Casos de uso
+│   ├── Domain/
+│   │   ├── Entities/       # Entidades de dominio
+│   │   └── Repositories/   # Interfaces de repositorios
+│   └── Infrastructure/
+│       ├── Http/
+│       │   ├── Controllers/    # Controladores HTTP
+│       │   ├── Policies/       # Políticas de autorización
+│       │   ├── Requests/       # Form Requests
+│       │   └── routes/         # Rutas del módulo
+│       ├── Jobs/           # Jobs de cola
+│       ├── Providers/      # Service Providers
+│       └── Repositories/   # Implementaciones de repositorios
+```
+
+## Frontend
+- **Ubicación**: `resources/js/Pages/`
+- **Tecnologías**: Vue.js 3 + Inertia.js + PrimeVue + Tailwind CSS
+- **Estructura**: Organizar por módulos en subdirectorios
+
+## Convenciones de Naming
+- **Módulos**: PascalCase (ej: Customer, Home)
+- **Archivos PHP**: PascalCase (ej: CustomerController.php)
+- **Archivos Vue**: PascalCase (ej: Index.vue)
+- **Interfaces**: Sufijo "Interface" (ej: CustomerRepositoryInterface)
+- **Implementaciones**: Prefijo "Eloquent" (ej: EloquentCustomerRepository)
+
+## Reglas de Desarrollo
+1. Cada módulo debe ser independiente y autocontenido
+2. La comunicación entre módulos debe ser a través de interfaces
+3. Los casos de uso deben estar en la capa de Application
+4. Las entidades de dominio no deben depender de frameworks
+5. Los controladores deben ser delgados, delegando lógica a servicios
+6. Usar DTOs para transferencia de datos entre capas
+7. Implementar inyección de dependencias para repositorios
+
+## Documentación de Funciones
+Toda función debe tener documentación con el formato:
+```php
+/**
+ * Descripción de la funcionalidad de la función
+ * 
+ * @param TipoParametro $parametro Descripción del parámetro
+ * @param array $datos Información que recibe
+ * @return TipoRetorno Descripción de lo que retorna
+ * 
+ * @example
+ * $resultado = funcionEjemplo($parametro, $datos);
+ */
+```
+
+**Elementos obligatorios:**
+- Descripción de la funcionalidad
+- Información que recibe (parámetros)
+- Lo que retorna
+- Ejemplo de uso (opcional pero recomendado)
+
+## Módulos Existentes
+- **Customer**: Gestión de clientes
+- **Home**: Página principal
+
+## Documentación
+- **Archivos Markdown**: Usar `.md` para documentación
+- **README por módulo**: Cada módulo debe tener su `README.md`
+- **Documentación de API**: Mantener en archivos `.md`
+- **Casos de uso**: Documentar en Markdown dentro de cada módulo
+
+## Tecnologías
+- **Backend**: Laravel 11, PHP 8.2+
+- **Frontend**: Vue.js 3, Inertia.js, PrimeVue, Tailwind CSS
+- **Base de datos**: SQLite (desarrollo)
+- **Testing**: PHPUnit

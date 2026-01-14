@@ -1,28 +1,33 @@
 <template>
-    <HomeLayout>
+    <div>
         <MainContent>
             <h1>RESTO MANAGE LC</h1>
         </MainContent>
-    </HomeLayout>
 
-    <Button 
-        @click="handleClick"
-        label="Boton prueva dependencia" 
-        severity="success"
-        class="mt-4"
-    />
-    <Toast />
-
+        <Button 
+            @click="handleClick"
+            label="Boton prueva dependencia" 
+            severity="success"
+            class="mt-4"
+        />
+        
+        <!-- Toast debe estar en el template para que useToast funcione -->
+        <Toast />
+    </div>
 </template>
 
 <script setup>
-import HomeLayout from "@/Layouts/HomeLayout.vue";
+import { provide } from 'vue';
 import Button from "primevue/button";
 import Toast from "primevue/toast";
 import { useToast } from "primevue/usetoast";
 import MainContent from "@/Components/MainContent.vue";
 
+/**
+ * Configurar Toast - ahora que ToastService está registrado globalmente
+ */
 const toast = useToast();
+provide('toast', toast);
 
 const handleClick = () => {
     toast.add({

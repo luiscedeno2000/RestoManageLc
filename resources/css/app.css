@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom PrimeVue Overrides */
+@import './primevue-custom.css';
+
 [x-cloak] {
     display: none;
 }

@@ -319,3 +319,165 @@ body, #app {
 .p-button.p-button-clean:enabled:focus {
     box-shadow: 0 0 0 0.2rem var(--secondary-200) !important;
 }
+
+/* DataTable White Background - Estilos más específicos y agresivos */
+.p-datatable,
+.p-datatable * {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+}
+
+.p-datatable .p-datatable-wrapper {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
+.p-datatable .p-datatable-header {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    color: #1f2937 !important;
+    border: 1px solid #e5e7eb !important;
+}
+
+.p-datatable .p-datatable-thead {
+    background-color: #f9fafb !important;
+    background: #f9fafb !important;
+}
+
+.p-datatable .p-datatable-thead > tr {
+    background-color: #f9fafb !important;
+    background: #f9fafb !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+    background-color: #f9fafb !important;
+    background: #f9fafb !important;
+    color: #1f2937 !important;
+    border: 1px solid #e5e7eb !important;
+    border-bottom: 2px solid #e5e7eb !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th * {
+    color: #1f2937 !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th .p-column-header-content {
+    color: #1f2937 !important;
+}
+
+.p-datatable .p-datatable-tbody {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
+.p-datatable .p-datatable-tbody > tr {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    color: #1f2937 !important;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    color: #1f2937 !important;
+    border: 1px solid #e5e7eb !important;
+}
+
+.p-datatable .p-datatable-tbody > tr > td * {
+    color: #1f2937 !important;
+}
+
+.p-datatable .p-datatable-tbody > tr:nth-child(even) {
+    background-color: #f9fafb !important;
+    background: #f9fafb !important;
+}
+
+.p-datatable .p-datatable-tbody > tr:nth-child(even) > td {
+    background-color: #f9fafb !important;
+    background: #f9fafb !important;
+}
+
+.p-datatable .p-datatable-tbody > tr:hover {
+    background-color: #f3f4f6 !important;
+    background: #f3f4f6 !important;
+}
+
+.p-datatable .p-datatable-tbody > tr:hover > td {
+    background-color: #f3f4f6 !important;
+    background: #f3f4f6 !important;
+}
+
+.p-datatable .p-paginator {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+    border: 1px solid #e5e7eb !important;
+    border-top: 2px solid #e5e7eb !important;
+}
+
+.p-datatable .p-paginator .p-paginator-pages .p-paginator-page {
+    color: #1f2937 !important;
+    background-color: #ffffff !important;
+}
+
+.p-datatable .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+}
+
+.p-datatable .p-paginator .p-paginator-pages .p-paginator-page:not(.p-highlight):hover {
+    background-color: #e5e7eb !important;
+    color: #1f2937 !important;
+}
+
+.p-datatable .p-paginator .p-paginator-first,
+.p-datatable .p-paginator .p-paginator-prev,
+.p-datatable .p-paginator .p-paginator-next,
+.p-datatable .p-paginator .p-paginator-last {
+    color: #1f2937 !important;
+    background-color: #ffffff !important;
+}
+
+.p-datatable .p-paginator .p-paginator-first:hover,
+.p-datatable .p-paginator .p-paginator-prev:hover,
+.p-datatable .p-paginator .p-paginator-next:hover,
+.p-datatable .p-paginator .p-paginator-last:hover {
+    background-color: #e5e7eb !important;
+}
+
+.p-datatable .p-paginator .p-paginator-current {
+    color: #6b7280 !important;
+}
+
+/* Clase específica para forzar fondo blanco */
+.datatable-white,
+.datatable-white .p-datatable,
+.datatable-white .p-datatable-wrapper,
+.datatable-white .p-datatable-header,
+.datatable-white .p-datatable-thead,
+.datatable-white .p-datatable-thead > tr,
+.datatable-white .p-datatable-thead > tr > th,
+.datatable-white .p-datatable-tbody,
+.datatable-white .p-datatable-tbody > tr,
+.datatable-white .p-datatable-tbody > tr > td,
+.datatable-white .p-paginator {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    color: #1f2937 !important;
+}
+
+.datatable-white .p-datatable-thead > tr > th {
+    background-color: #f9fafb !important;
+    background: #f9fafb !important;
+}
+
+.datatable-white .p-datatable-tbody > tr:nth-child(even),
+.datatable-white .p-datatable-tbody > tr:nth-child(even) > td {
+    background-color: #f9fafb !important;
+    background: #f9fafb !important;
+}
+
+.datatable-white .p-datatable-tbody > tr:hover,
+.datatable-white .p-datatable-tbody > tr:hover > td {
+    background-color: #f3f4f6 !important;
+    background: #f3f4f6 !important;
+}

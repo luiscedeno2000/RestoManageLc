@@ -3,7 +3,7 @@
 namespace Src\Home\Infrastructure\Http\Controllers;
 
 use Inertia\Inertia;
-
+use Illuminate\Support\Facades\Hash;
 class HomeController
 {
     /**
@@ -11,6 +11,8 @@ class HomeController
      */
     public function index()
     {
-        return Inertia::render('Home/Index');
+        $pswd = '1234567890';
+        $pswdHash = Hash::make($pswd);
+        return Inertia::render('Index');
     }
 }

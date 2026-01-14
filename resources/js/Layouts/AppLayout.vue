@@ -1,5 +1,6 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, provide } from 'vue';
+import { useToast } from 'primevue/usetoast';
 import { Head, Link, router } from '@inertiajs/vue3';
 import ApplicationMark from '@/Components/ApplicationMark.vue';
 import Banner from '@/Components/Banner.vue';
@@ -7,6 +8,16 @@ import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
+import Nav from '@/Components/Nav.vue';
+import Sidebar from '@/Components/Sidebar.vue';
+import Toast from 'primevue/toast';
+
+/**
+ * Configurar Toast y proporcionarlo a todos los componentes hijos
+ * Ahora que ToastService está registrado globalmente, podemos usar useToast() directamente
+ */
+const toast = useToast();
+provide('toast', toast);
 
 defineProps({
     title: String,
@@ -33,8 +44,8 @@ const logout = () => {
 
         <Banner />
 
-        <div class="min-h-screen bg-gray-100">
-            <nav class="bg-white border-b border-gray-100">
+        <div class="flex flex-col min-h-screen bg-gray-100">
+            <nav class="bg-white border-b border-gray-100 flex-shrink-0">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
@@ -47,9 +58,16 @@ const logout = () => {
                             </div>
 
                             <!-- Navigation Links -->
-                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            <div class="hidden space-x-3 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
+                                </NavLink>
+                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                                    Home
+                                </NavLink>
+
+                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                                    Menu
                                 </NavLink>
                             </div>
                         </div>
@@ -273,17 +291,28 @@ const logout = () => {
                 </div>
             </nav>
 
-            <!-- Page Heading -->
-            <header v-if="$slots.header" class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    <slot name="header" />
-                </div>
-            </header>
+            <div class="flex flex-1">
+                <!-- Sidebar -->
+                <Sidebar />
 
-            <!-- Page Content -->
-            <main>
-                <slot />
-            </main>
+                <!-- Main Content Area -->
+                <div class="flex-1 overflow-y-auto">
+                    <!-- Page Heading -->
+                    <header v-if="$slots.header" class="bg-white shadow">
+                        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                            <slot name="header" />
+                        </div>
+                    </header>
+
+                    <!-- Page Content -->
+                    <main>
+                        <slot />
+                    </main>
+                </div>
+            </div>
         </div>
+        
+        <!-- Toast global para notificaciones -->
+        <Toast />
     </div>
 </template>
